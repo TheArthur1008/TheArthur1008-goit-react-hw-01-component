@@ -1,5 +1,8 @@
 import Profile from './Profile/Profile';
-import user from './JSON/user.json'
+import Statistics from './Statistics/Statistics';
+
+import user from './JSON/user.json';
+import data from './JSON/data.json';
 
 export const App = () => {
   return (
@@ -9,18 +12,17 @@ export const App = () => {
         justifyContent: 'space-around',
         alignItems: 'center',
         fontSize: 16,
-        color: '#010101'
+        color: '#010101',
       }}
     >
-
-<Profile
-  username={user.username}
-  tag={user.tag}
-  location={user.location}
-  avatar={user.avatar}
-  stats={user.stats}
-/>
-
+      <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+      <Statistics title="Upload stats" stats={data} />
     </div>
   );
 };
